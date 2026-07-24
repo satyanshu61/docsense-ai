@@ -1,0 +1,9 @@
+.ds-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ds-app__body {
+  flex: 1;
+}

@@ -1,0 +1,119 @@
+.ds-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(246, 247, 251, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ds-navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.ds-navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--color-ink-900);
+}
+
+.ds-navbar__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: var(--color-ink-900);
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.ds-navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.ds-navbar__link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink-500);
+  transition: color 0.15s ease;
+}
+
+.ds-navbar__link:hover {
+  color: var(--color-ink-900);
+}
+
+.ds-navbar__cta {
+  background: var(--color-brand);
+  color: #ffffff;
+  padding: 9px 18px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.15s ease;
+}
+
+.ds-navbar__cta:hover {
+  background: var(--color-brand-dark);
+}
+
+.ds-navbar__user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 14px;
+  border-left: 1px solid var(--color-border);
+}
+
+.ds-navbar__avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-brand-light);
+  color: var(--color-brand-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ds-navbar__username {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-ink-700);
+}
+
+.ds-navbar__logout {
+  background: transparent;
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-ink-500);
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+.ds-navbar__logout:hover {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+@media (max-width: 720px) {
+  .ds-navbar__username {
+    display: none;
+  }
+}

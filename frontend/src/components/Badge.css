@@ -1,0 +1,27 @@
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.01em;
+}
+
+.ds-badge--success {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+.ds-badge--warning {
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+.ds-badge--danger {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+}
+.ds-badge--neutral {
+  background: var(--color-surface-alt);
+  color: var(--color-ink-500);
+}

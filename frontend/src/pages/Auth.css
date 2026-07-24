@@ -1,0 +1,98 @@
+.ds-auth {
+  min-height: calc(100vh - 68px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.ds-auth__card {
+  width: 100%;
+  max-width: 420px;
+  padding: 36px 34px;
+}
+
+.ds-auth__header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.ds-auth__mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--color-ink-900);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin: 0 auto 16px;
+  font-size: 15px;
+}
+
+.ds-auth__header h1 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.ds-auth__header p {
+  font-size: 13.5px;
+  color: var(--color-ink-400);
+}
+
+.ds-auth__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ds-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ds-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-ink-700);
+}
+
+.ds-field input {
+  padding: 11px 13px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-strong);
+  font-size: 14px;
+  color: var(--color-ink-900);
+  background: var(--color-surface);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ds-field input:focus {
+  outline: none;
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 3px var(--color-brand-light);
+}
+
+.ds-auth__error {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 13px;
+  border-radius: var(--radius-md);
+}
+
+.ds-auth__switch {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 13.5px;
+  color: var(--color-ink-400);
+}
+
+.ds-auth__switch a {
+  color: var(--color-brand);
+  font-weight: 600;
+}

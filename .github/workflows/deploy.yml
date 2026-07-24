@@ -1,0 +1,79 @@
+name: Deploy DocSense AI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script_stop: true
+          script: |
+            set -euo pipefail
+
+            export REPO_DIR="$HOME/docsense-ai"
+            export REPO_URL="https://github.com/satyanshu61/docsense-ai.git"
+            export BRANCH="main"
+
+            if ! command -v docker >/dev/null 2>&1; then
+              echo "Docker is not installed on the EC2 instance."
+              exit 1
+            fi
+
+            docker_compose() {
+              if [ "$(id -u)" -ne 0 ] && command -v sudo >/dev/null 2>&1; then
+                sudo docker compose "$@"
+              else
+                docker compose "$@"
+              fi
+            }
+
+            if ! docker_compose version >/dev/null 2>&1; then
+              echo "Docker Compose is not available on the EC2 instance."
+              exit 1
+            fi
+
+            mkdir -p "$REPO_DIR"
+            cd "$REPO_DIR"
+            git config --global --add safe.directory "$REPO_DIR"
+
+            if [ ! -d .git ]; then
+              rm -rf "$REPO_DIR"
+              git clone "$REPO_URL" "$REPO_DIR"
+            fi
+
+            git fetch origin "$BRANCH"
+            git checkout "$BRANCH"
+            git reset --hard "origin/$BRANCH"
+
+            mkdir -p backend
+            cat > backend/.env <<EOF
+            PORT=5000
+            NODE_ENV=production
+            MONGO_URI=${MONGO_URI}
+            JWT_SECRET=${JWT_SECRET}
+            GEMINI_API_KEY=${GEMINI_API_KEY}
+            GEMINI_MODEL=gemini-1.5-flash
+            CLIENT_URL=${CLIENT_URL}
+            MAX_FILE_SIZE_MB=10
+            EOF
+
+            docker_compose down --remove-orphans || true
+            docker_compose up -d --build
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CLIENT_URL: ${{ secrets.CLIENT_URL }}

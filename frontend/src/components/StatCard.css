@@ -1,0 +1,48 @@
+.ds-stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 22px;
+}
+
+.ds-stat__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.ds-stat__icon--brand {
+  background: var(--color-brand-light);
+  color: var(--color-brand);
+}
+.ds-stat__icon--success {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+.ds-stat__icon--warning {
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+.ds-stat__icon--ink {
+  background: var(--color-surface-alt);
+  color: var(--color-ink-700);
+}
+
+.ds-stat__value {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-ink-900);
+}
+
+.ds-stat__label {
+  font-size: 13px;
+  color: var(--color-ink-400);
+  font-weight: 500;
+  margin-top: 2px;
+}

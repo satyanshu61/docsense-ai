@@ -1,0 +1,111 @@
+.ds-footer {
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  margin-top: auto;
+}
+
+.ds-footer__inner {
+  padding: 40px 24px 24px;
+}
+
+.ds-footer__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ds-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--color-ink-900);
+}
+
+.ds-footer__mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--color-ink-900);
+  color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.ds-footer__columns {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.ds-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.ds-footer__col a {
+  font-size: 13.5px;
+  color: var(--color-ink-400);
+  transition: color 0.15s ease;
+}
+
+.ds-footer__col a:hover {
+  color: var(--color-brand);
+}
+
+.ds-footer__heading {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-300);
+  margin-bottom: 4px;
+}
+
+.ds-footer__socials {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.ds-footer__socials a {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-ink-500);
+  font-size: 15px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.ds-footer__socials a:hover {
+  color: var(--color-brand);
+  border-color: var(--color-brand);
+}
+
+.ds-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 20px;
+  font-size: 12.5px;
+  color: var(--color-ink-300);
+}
+
+@media (max-width: 720px) {
+  .ds-footer__top {
+    flex-direction: column;
+  }
+}

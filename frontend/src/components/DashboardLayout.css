@@ -1,0 +1,21 @@
+.ds-dashboard {
+  display: flex;
+  align-items: flex-start;
+}
+
+.ds-dashboard__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.ds-dashboard__inner {
+  padding: 36px 24px 60px;
+  max-width: 980px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .ds-dashboard__inner {
+    padding: 24px 20px 48px;
+  }
+}

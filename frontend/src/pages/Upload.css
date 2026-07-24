@@ -1,0 +1,119 @@
+.ds-upload {
+  max-width: 640px;
+}
+
+.ds-dropzone {
+  border: 2px dashed var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  padding: 50px 24px;
+  text-align: center;
+  background: var(--color-surface);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  cursor: pointer;
+}
+
+.ds-dropzone--active {
+  border-color: var(--color-brand);
+  background: var(--color-brand-light);
+}
+
+.ds-dropzone__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-brand-light);
+  color: var(--color-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin: 0 auto 18px;
+}
+
+.ds-dropzone h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.ds-dropzone p {
+  font-size: 13.5px;
+  color: var(--color-ink-400);
+  margin-bottom: 4px;
+}
+
+.ds-dropzone__hint {
+  font-size: 12px;
+  color: var(--color-ink-300);
+  margin-top: 12px;
+}
+
+.ds-dropzone input {
+  display: none;
+}
+
+.ds-file-preview {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  margin-top: 18px;
+}
+
+.ds-file-preview__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-brand-light);
+  color: var(--color-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.ds-file-preview__name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink-900);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ds-file-preview__size {
+  font-size: 12.5px;
+  color: var(--color-ink-400);
+}
+
+.ds-file-preview__remove {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: var(--color-ink-400);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ds-file-preview__remove:hover {
+  color: var(--color-danger);
+}
+
+.ds-upload__actions {
+  margin-top: 22px;
+}
+
+.ds-upload__error {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 13px;
+  border-radius: var(--radius-md);
+  margin-top: 16px;
+}
+
+.ds-upload__processing {
+  text-align: center;
+  padding: 40px 20px;
+}

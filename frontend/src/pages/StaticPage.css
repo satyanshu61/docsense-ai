@@ -1,0 +1,120 @@
+.ds-static {
+  padding: 56px 0 80px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.ds-static__eyebrow {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--color-brand);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.ds-static h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.ds-static__updated {
+  font-size: 13px;
+  color: var(--color-ink-400);
+  margin-bottom: 40px;
+}
+
+.ds-static__lead {
+  font-size: 16px;
+  color: var(--color-ink-500);
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+
+.ds-static section {
+  margin-bottom: 32px;
+}
+
+.ds-static h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.ds-static p {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--color-ink-700);
+  margin-bottom: 12px;
+}
+
+.ds-static ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 8px 0 4px;
+}
+
+.ds-static ul li {
+  display: flex;
+  gap: 10px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--color-ink-700);
+}
+
+.ds-static ul li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-brand);
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.ds-static__team {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.ds-static__team-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  text-align: center;
+}
+
+.ds-static__team-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-brand-light);
+  color: var(--color-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: var(--font-display);
+  margin: 0 auto 10px;
+}
+
+.ds-static__team-card h4 {
+  font-size: 13.5px;
+  margin-bottom: 3px;
+}
+
+.ds-static__team-card p {
+  font-size: 12px;
+  color: var(--color-ink-400);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .ds-static__team {
+    grid-template-columns: 1fr;
+  }
+}

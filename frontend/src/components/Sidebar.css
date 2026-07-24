@@ -1,0 +1,129 @@
+.ds-sidebar {
+  width: 232px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--color-border);
+  padding: 28px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 68px);
+}
+
+.ds-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ds-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink-500);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.ds-sidebar__item:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-ink-900);
+}
+
+.ds-sidebar__item--active {
+  background: var(--color-brand-light);
+  color: var(--color-brand-dark);
+  font-weight: 600;
+}
+
+.ds-sidebar__icon {
+  display: inline-flex;
+  font-size: 17px;
+}
+
+.ds-sidebar__footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink-400);
+}
+
+@media (max-width: 900px) {
+  .ds-sidebar {
+    display: none;
+  }
+}
+
+.ds-sidebar__settings {
+  position: relative;
+}
+
+.ds-sidebar__footer--button {
+  width: 100%;
+  background: transparent;
+  border: none;
+  text-align: left;
+  border-radius: var(--radius-md);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.ds-sidebar__footer--button:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-ink-900);
+}
+
+.ds-settings-panel {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 12px;
+}
+
+.ds-settings-panel__label {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-400);
+  margin-bottom: 10px;
+}
+
+.ds-theme-toggle {
+  display: flex;
+  width: 100%;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 3px;
+  gap: 3px;
+}
+
+.ds-theme-toggle__option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 0;
+  border-radius: calc(var(--radius-md) - 3px);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-ink-400);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.ds-theme-toggle__option--active {
+  background: var(--color-surface);
+  color: var(--color-ink-900);
+  box-shadow: var(--shadow-sm);
+}
